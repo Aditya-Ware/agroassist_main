@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            AGROASSIST
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!--GOOGLE FONT-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Fontawesome-->
+  <script src="https://kit.fontawesome.com/e6e8ec7688.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+    :root{
+    --white: #f9f9f9;
+    --black: #f8fcf8;
+    --gray: #85888C;
+} /* variables*/
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: "Montserrat";
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+/* Header */
+.header{
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 125px;
+}
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--white);
+    
+    margin-left: 10px;
+}
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--black);
+    overflow: hidden;
+margin-top: 50px;
+}
+.menu a{
+    display: block;
+    padding: 30px;
+    color: green;
+}
+.menu a:hover{
+    background-color: var(--gray);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: green;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: green;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+@media (min-width: 768px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+
+    }
+
+    .hamb{
+        display: none;
+    }
+}
+.main{
+    width: 150px;
+    height: 150px;
+    border-radius: 10000000px;
+}
+.slide{
+    padding-bottom: 3%;
+  
+    
+}
+.header{
+    position: relative;
+    z-index: 100;
+}
+#pricing{
+    padding:100px ;
+    text-align: center;
+}
+.pricing-column{
+    padding: 3% 2%;
+}
+h2{
+    color: green;
+    text-align: center;
+    margin-bottom: 25px;
+}
+h3{
+    color: green;
+}
+.seasonal{
+    
+    background-color: beige;
+    
+    margin-top: 5px;
+    margin-left: 85px;
+    border: 1px solid gray;
+    
+   padding-left: 0;
+    height: 215px;
+}
+.seasonal img{
+    width: 190px;
+    height: 120px;
+    margin-top: 5px;
+   margin-left: 5px;
+   box-shadow:10px 5px  rgba(202, 178, 178, 0.4);
+}
+.seasonal_body{
+    font-weight: 800;
+    color: green;
+    font-size: 30px;
+     text-align: center;
+}
+.item{
+    background-color: beige;
+    
+    margin-top: 5px;
+   
+    border: 1px solid green;
+    
+    text-align: center;
+    height: 240px;
+}
+.item img{
+    width: 190px;
+    height: 120px;
+    margin-top: 10px;
+   
+}
+.item_header{
+    text-align: right;
+    color: red;
+    font-weight: 800;
+    box-shadow:2px 2px 2px 2px  rgba(0, 0, 0, 0.4);
+    margin-top: 5px;
+}
+
+.item_body2{
+    text-align: left;
+}
+.item_footer{
+    text-align: right;
+    font-size: 13px;
+   
+    border-top: 0.5px solid black;
+}
+button{
+    border: white;
+
+}
+.bank_body{
+    font-size:17px;
+    
+    color: white;
+    
+}
+.bank{
+    
+    background-color: beige;
+    
+    margin-top: 5px;
+    margin-left: 85px;
+    border: 1px solid gray;
+    
+   padding-left: 0;
+    height: 215px;
+    text-align: center;
+}
+.bank img{
+    width: 190px;
+    height: 120px;
+    text-align: center;
+margin-left: 12px;
+margin-top: 20px;
+}
+.other{
+    
+    
+    
+    margin-top: 5px;
+    margin-left: 85px;
+    
+    
+   padding-left: 0;
+    height: 215px;
+}
+.other img{
+    border: 1px solid gray;
+    margin-right: 5px;
+}
+.foot{
+    
+   
+    color: black;
+    margin-top: 5px;
+    margin-left: 85px;
+    text-align: center;
+    
+   padding-left: 0;
+    height: 215px;
+}
+.foot_main{
+    background-color: #BDFCB1;
+  
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+.modal-body img{
+    height: 90px;
+       width:90px;
+       display: flexbox;
+       float: right;
+}
+.modal-header{
+    border-radius:30px 30px 0px 0px;
+}
+.modal-content{
+    border-radius: 30px 30px 0px 0px;
+}
+  </style>
+    </head>
+    <body>
+        
+        <header class="header">
+          <!-- Logo -->
+          <a href="#" class="logo"><img class="main" src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\main.png" alt="main"></a>
+          <!-- Hamburger icon -->
+          <input class="side-menu" type="checkbox" id="side-menu"/>
+          <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+          <!-- Menu -->
+          <nav class="nav">
+              <ul class="menu">
+                  <li><a href="#">HOME</a></li>
+                  <li><a href="#"> SERVICES</a> </li>
+                  <li><a href="#">Join Us</a></li>
+                  <li><a href="/sign" role="tab" data-toggle="tab">Sign-Up/Log-In</a></li>
+              </ul>
+          </nav>
+      </header>
+      <br>
+      <br>
+      <br>
+      <div class="slide ">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-ds-interval="1000ms">
+          <div class="carousel-inner">
+            <div class="carousel-item active" style=" height:650px;">
+              <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\img_1.jpeg" class="d-block w-100" alt="img_1">
+            </div>
+            <div class="carousel-item" style=" height:650px;">
+              <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\img_2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" style=" height:650px;">
+              <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\img_3.webp" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <hr>
+      <div class= "row">
+        <h2><u>FARMER'S FRENZY DEAL</u></h2>
+        <div class="seasonal col-lg-2 col-md-6">
+    <div class="seasonal_header">
+        <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+        
+        </div>
+        <br>
+        <div class="seasonal_body">
+      25% off
+        </div>
+        </div>
+        
+        
+        <div class="seasonal col-lg-2 col-md-6">
+        <div class="seasonal_header">
+        <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+        
+        </div>
+        <br>
+        <div class="seasonal_body">
+      25% off
+        </div>
+        </div>
+        
+        <div class="seasonal col-lg-2 col-md-6">
+        <div class="seasonal_header">
+        <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+        
+        </div>
+        <br>
+        <div class="seasonal_body">
+      25% off
+        </div>
+        </div>
+        
+        
+        <div class="seasonal col-lg-2 col-md-6">
+        <div class="seasonal_header">
+        <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+        
+        </div>
+        <br>
+        <div class="seasonal_body">
+      25% off
+        </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+                <br>
+        <br>
+        <h2><u>TODAY'S DEAL</u></h2>
+        <div class="slide ">
+          <div id="carouselExampleAutoplaying1" class="carousel slide" data-bs-ride="false" data-ds-interval="1000ms">
+              <div class="carousel-inner">
+                <div class="carousel-item active" style=" height:450px;">
+                  
+                    <div class= "row" style="margin-top: 40px;">
+                        
+                        <br>
+                        <div class="item col-lg-2 col-md-6" style="margin-right: 40px; margin-left: 220px; width: 200px; height: 350px;">
+                          <div id="item_main">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 40px; width: 200px; height: 350px;">
+                              <div id="item_main">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 40px; width: 200px; height: 350px;">
+                              <div id="item_main">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 40px; width: 200px; height: 350px;">
+                              <div id="item_main">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                             <button>ADD TO CART</button> <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                           </div>
+                    </div>
+    
+                </div>
+                
+                <div class="carousel-item" style=" height:450px;">
+                   <div class= "row" style="margin-top: 40px;">
+                        
+                        
+                        <div class="item col-lg-2 col-md-6" style="margin-right: 40px; margin-left: 220px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 40px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 40px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 40px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                             <button>ADD TO CART</button> <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                           </div>
+    
+    
+    
+                </div>
+                <div class="carousel-item" style=" height:450px;">
+                   <div class= "row" style="margin-top: 40px;">
+                        
+                        <div class="item col-lg-2 col-md-6" style="margin-right: 50px; margin-left: 220px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 50px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 50px;  width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                              <button>ADD TO CART</button><i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                            
+                            <div class="item col-lg-2 col-md-6" style="margin-right: 50px; width: 200px; height: 350px;">
+                          <div class="item_header">
+                            50% Off
+                          </div>
+                          <div class="item_body1">
+                            <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer" style="padding-right: 30px;">
+                            
+                            </div>
+                            <br>
+                            <div class="item_body2">
+                          price=<strike>$500</strike>  <b>$250</b>
+                          
+                            </div>
+                            <div class="item_footer">
+                             <button>ADD TO CART</button> <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            </div>
+                           </div>
+    
+    
+    
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+              <hr>
+              <br>
+              <br>
+              <div class= "row" style="margin-left: 30px;">
+                <h2><u>SPECIAL DISCOUNTS</u></h2>
+                <br>
+                <br>
+                <div class="bank  col-lg-2 col-md-6" style="background-color: orange;">
+            <div class="seasonal_header" >
+                <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+                
+                </div>
+                <br>
+                <div class="bank_body">
+              $ 200 instant Discount
+Minimum order $700
+                </div>
+                </div>
+                
+                
+                <div class="bank col-lg-2 col-md-6" style="background-color: purple;">
+                <div class="bank_header">
+                <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+                
+                </div>
+                <br>
+                <div class="bank_body">
+                  $ 200 instant Discount
+                  Minimum order $700
+                </div>
+                </div>
+                
+                <div class="bank  col-lg-2 col-md-6" style="background-color: blue;">
+                <div class="seasonal_header">
+                <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+                
+                </div>
+                <br>
+                <div class="bank_body">
+                  $ 200 instant Discount
+                  Minimum order $700
+                </div>
+                </div>
+                
+                
+                <div class="bank  col-lg-2 col-md-6" style="background-color: maroon;">
+                <div class="seasonal_header">
+                <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\mock.jpg" alt="offer">
+                
+                </div>
+                <br>
+                <div class="bank_body">
+                  $ 200 instant Discount
+                  Minimum order $700
+                </div>
+                </div>
+                </div>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+        <br>
+        <hr>
+        <br>
+        <div class= "row" >
+          <h2><u>OTHER SERVICES</u></h2>
+          <div class="other col-lg-2 col-md-6" >
+            <button id="myBtn"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\APLAM1.png" ></button>
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content" >
+                <div class="modal-header" >
+                  <span class="close">&times;</span>
+                  <p style="margin-right: 550px"><u>LAND PREPARATION</u></p>
+                </div>
+               <br>
+                <div class="modal-body" style="margin-right: 350px;">
+                  <div class="modal_body_pehla">
+                <div class="modal-body1">
+                 <a href="/modplo"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_plough.jpg" style="margin-right: 50px;"></a>
+                </div>
+                <div class="modal-body2">
+                  <a href="/modhar"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_harrow.jpg" style="margin-right: 50px;"></a>
+                </div>
+                <div class="modal-body3">
+                 <a href="/modlev"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_level.jpg" style="margin-right: 50px;"></a>
+                </div>
+                <div class="modal-body4">
+                 <a href="/modfert"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_fertilizer.jpg" style="margin-right: 50px;"></a>
+                </div>
+                
+                </div>
+                <br>
+                <div class="modal_body_dusra" style="margin-top: 100px;">
+                <div class="modal-body5">
+                  <a href="/modweed"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_weed.jpg" style="margin-right: 50px;"></a>
+                </div>
+                <div class="modal-body6">
+                  <a href="/modpes"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_pest.png" style="margin-right: 50px;"></a>
+                </div>
+                <div class="modal-body7">
+                 <a href="/modmul"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_mulching.jpg" style="margin-right: 50px;"></a>
+                </div>
+                <div class="modal-body8">
+                  <a href="/modterra"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\modal_terrace.jpg" style="margin-right: 50px;"></a>
+                </div>
+                </div>
+                </div>
+              </div>
+            
+            </div>
+            
+            <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>
+            
+      
+          
+          </div>
+          
+          
+          <div class="other col-lg-2 col-md-6">
+            <a href="/planting"><img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\APLAM2.png" style="margin-left: 10px;"></a>
+          <br>
+          
+          </div>
+          
+          <div class="other col-lg-2 col-md-6">
+            <a href="/harvesting"> <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\APLAM3.png" style="margin-left: 12px;"></a>
+          <br>
+          
+          </div>
+          
+          
+          <div class="other col-lg-2 col-md-6">
+            <a href="/postharvesting">  <img src="D:\USER DATA\Desktop\AGROASSIST\Agroassist_home\APLAM4.png"></a>
+          <br>
+          
+          </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <footer class="foot_main">
+           
+            <div class= "row">
+             
+              <div class="foot col-lg-2 col-md-6">
+          <h5><u>KNOW US</u></h5>
+          <br>
+About Us<br>
+Careers<br>
+Press Releases<br>
+Motive
+              </div>
+              
+              
+              <div class="foot col-lg-2 col-md-6">
+                <h5><u>JOIN</u></h5>
+                <br>
+      Benefits<br>
+      Process<br>
+      Application<br>
+      Other
+              </div>
+              
+              <div class="foot col-lg-2 col-md-6">
+                <h5><u>LATEST</u></h5>
+                <br>
+      New Releases<br>
+      Rates<br>
+      Products<br>
+      Many More..
+              </div>
+              
+              
+              <div class="foot col-lg-2 col-md-6">
+                <h5><u>HELP DESK</u></h5>
+                <br>
+      Services related<br>
+      Product Related<br>
+      Job Related<br>
+      Other
+              </div>
+              </div>
+              <div class="icon" style="margin-left: 550px;">
+                <h5><u style="margin-left: 50px;"> CONNECT US</u></h5>
+                <div class="icon_img">
+                <i class="fa-brands fa-google-play fa-2x" style="margin-right: 15px;"></i>
+                <i class="fa-brands fa-apple fa-2x" style="margin-right: 15px;"></i>
+                <i class="fa-brands fa-facebook fa-2x" style="margin-right: 15px;"></i>
+                <i class="fa-brands fa-instagram fa-2x" style="margin-right: 15px;"></i>
+                <i class="fa-brands fa-twitter fa-2x"></i>
+                </div>
+
+              </div>
+          </footer>
+    </body>
+</html>
